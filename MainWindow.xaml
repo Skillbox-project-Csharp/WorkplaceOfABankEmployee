@@ -1,0 +1,31 @@
+﻿<Window x:Class="WorkplaceOfABankEmployee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkplaceOfABankEmployee" xmlns:banksystemwpfcontrollibrary="clr-namespace:BankSystemWpfControlLibrary;assembly=BankSystemWpfControlLibrary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="95*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Menu>
+                <MenuItem 
+                    Header="История операций" 
+                    Click="MenuOpenHistoryWindows_Click"/>
+                <MenuItem 
+                    Header="Сменить работника" 
+                    Click="MenuChangeAnEmployee_Click"/>
+            </Menu>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <banksystemwpfcontrollibrary:CustomerAccountManagementMenu 
+                x:Name="customerAccountManagementMenu"/>
+        </Grid>
+    </Grid>
+</Window>
